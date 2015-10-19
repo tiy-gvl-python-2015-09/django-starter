@@ -1,6 +1,7 @@
 # Django Starter (Bootstrap)
 
 This is Zach's W6D1 Homework
+Zach's homework
 
 ## Description
 
