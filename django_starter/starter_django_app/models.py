@@ -9,11 +9,12 @@ class User(models.Model):
     password = models.CharField(max_length=16)
     display_name = models.CharField(max_length=50)
     email_address = models.CharField(max_length=100)
-    following =
+
 
 class Follows(models.Model):
     to_be_followed = models.ManyToManyField(User)
     being_followed_by = models.ManyToManyField(User)
+
 
 class Follower(models.Model):
     following_user = models.ForeignKey(Follows.being_followed_by)
@@ -29,3 +30,12 @@ class Tweet(models.Model):
     owner = models.ForeignKey(User)
     tag = models.ManyToManyField(User)
     video = models.FileField()
+
+
+class Search(models.Model):
+    search_term = models.CharField(max_length=160)
+
+
+class Direct_Message(models.Model):
+    message = models.TextField()
+    owner = models.ForeignKey(User)
