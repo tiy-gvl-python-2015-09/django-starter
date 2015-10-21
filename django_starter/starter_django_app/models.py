@@ -39,3 +39,7 @@ class Search(models.Model):
 class Direct_Message(models.Model):
     message = models.TextField()
     owner = models.ForeignKey(User)
+
+
+class Feed(models.Model):
+    user_followed_tweet = models.ManyToManyField(user_followed.Tweet)
