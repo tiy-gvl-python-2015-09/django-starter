@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        BEST TITLE EVER
+    </title>
+    <link rel="stylesheet", type="text/css", href="{% static 'bootstrap.css' %}">
+    <p class="text-capitalize text-center text-danger lead">my page</p>
+</head>
+<body>
+
+<div class="container">
+
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="#">Home</a></li>
+      <li role="presentation"><a href="#">Profile</a></li>
+      <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+
+    {% block panels%}
+    <div class="row">
+        {% for person in panels %}
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ person.title }}</h3>
+                </div>
+                <div class="panel-body">
+                    {{ person.body }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
+
+<p class="label-info">I've made {{ count }} tweets. Follow me @{{ username }}. Also beware of Lemongrab, his outbursts
+    are {{ lemongrap }}</p>
+<p class="label-primary ">So, what should I say here. Maybe some words. But what words. The, and, what? I don't know.</p>
+
+<p class="alert-danger text-right">More text to try things out on.</p>
+
+<img src="http://cdn.instructables.com/FT5/GF93/I70AWRQO/FT5GF93I70AWRQO.MEDIUM.gif" alt="center">
+<img src=https://s-media-cache-ak0.pinimg.com/originals/01/ae/b5/01aeb5c890c9655975f52341c6253429.gif alt="center">
+<img src=http://media.giphy.com/media/aJnQ9P7JVR25W/giphy.gif alt="center">
+
+    <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      Enter a valid email address
+    </div>
+</div>
+</body>
+</html>
