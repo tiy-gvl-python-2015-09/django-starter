@@ -1,5 +1,8 @@
 # Django Starter (Bootstrap)
 
+This is Zach's W6D1 Homework
+Zach's homework
+
 ## Description
 
 Create a basic django website that uses the Twitter Bootstrap CSS framework
